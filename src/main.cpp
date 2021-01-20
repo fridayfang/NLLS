@@ -15,7 +15,7 @@ void read_edge(Edgs_ptr& e_ptr,string& data_file_e){
     int idi,idj;
     double dx,dy,dt;
     double info_xx,info_xy,info_yy,info_tt,info_xt,info_yt;
-    
+
     ifstream fo(data_file_e);
     int num_e = 0;
     if(fo.is_open()){
@@ -27,7 +27,7 @@ void read_edge(Edgs_ptr& e_ptr,string& data_file_e){
             e.info<<info_xx,info_xy,info_xt,
                 info_xy,info_yy,info_yt,
                 info_xt,info_yt,info_tt;
-           e_ptr->push_back(e); 
+           e_ptr->push_back(e);
 
         }
     }
@@ -51,7 +51,7 @@ void DrawTrajectory(vector<Vector3d, Eigen::aligned_allocator<Vector3d>> poses) 
 
   pangolin::OpenGlRenderState s_cam(
     pangolin::ProjectionMatrix(1024, 768, 500, 500, 512, 389, 0.1, 1000),
-    pangolin::ModelViewLookAt(5,5,200, 0, 0, 0, pangolin::AxisNegZ)
+    pangolin::ModelViewLookAt(5,5,50, 0, 0, 0, pangolin::AxisNegZ)
   );
 
   pangolin::View &d_cam = pangolin::CreateDisplay()
